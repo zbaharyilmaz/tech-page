@@ -6,7 +6,7 @@ const Navbar: React.FC = () => {
       <div className="container">
         <a className="navbar-brand d-flex align-items-center" href="#home">
           <img
-            src="/img/harvey-tech-logo.svg"
+            src="/img/zetech-logo.svg"
             alt="ZeTech"
             height="50"
             className="me-2"

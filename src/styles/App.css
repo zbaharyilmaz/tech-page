@@ -48,6 +48,43 @@ html {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Custom Orange Theme */
+.btn-danger {
+  background-color: #ff6b35 !important;
+  border-color: #ff6b35 !important;
+}
+
+.btn-danger:hover {
+  background-color: #e55a2e !important;
+  border-color: #e55a2e !important;
+}
+
+/* Orange gradient backgrounds */
+.bg-orange-gradient {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+}
+
+.text-orange {
+  color: #ff6b35 !important;
+}
+
+/* Icon hover effects with orange */
+.icon:hover {
+  background-color: #ff6b35 !important;
+  color: white !important;
+}
+
+/* Team border orange on hover */
+.team:hover {
+  border-color: #ff6b35 !important;
+}
+
+/* Social media buttons orange */
+.social:hover {
+  background-color: #ff6b35 !important;
+  border-color: #ff6b35 !important;
+}
+
 /* Navbar brand animation */
 .navbar-brand {
   transition: transform 0.3s ease;

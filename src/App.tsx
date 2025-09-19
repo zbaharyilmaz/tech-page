@@ -10,6 +10,7 @@ import Clients from "./components/Clients";
 import ContactUs from "./components/ContactUs";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -24,6 +25,18 @@ function App() {
       <ContactUs />
       <Footer />
       <ScrollToTop />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 }

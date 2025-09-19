@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ContactUs: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -23,25 +25,52 @@ const ContactUs: React.FC = () => {
 
     // Form validation
     if (!formData.name || !formData.email || !formData.message) {
-      alert("Lütfen tüm gerekli alanları doldurun!");
+      toast.error("Lütfen tüm gerekli alanları doldurun!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
       return;
     }
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      alert("Lütfen geçerli bir e-posta adresi girin!");
+      toast.warning("Lütfen geçerli bir e-posta adresi girin!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
       return;
     }
 
-    // Simulate form submission
-    alert(
-      `Mesajınız başarıyla gönderildi!\n\nİsim: ${formData.name}\nE-posta: ${
-        formData.email
-      }\nTelefon: ${formData.phone || "Belirtilmemiş"}\nMesaj: ${
-        formData.message
-      }`
-    );
+    // Show loading toast
+    toast.loading("Mesajınız gönderiliyor...", {
+      position: "top-right",
+      toastId: "loading-toast",
+    });
+
+    // Simulate form submission with delay
+    setTimeout(() => {
+      toast.dismiss("loading-toast");
+      toast.success(
+        "Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.",
+        {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        }
+      );
+    }, 2000);
 
     // Reset form
     setFormData({

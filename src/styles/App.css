@@ -1,0 +1,85 @@
+.icon {
+  width: 150px;
+  height: 150px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.team {
+  border: 10px solid rgb(180, 178, 178) !important;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.team:hover {
+  transform: scale(1.05);
+  border-color: #dc3545 !important;
+}
+
+.contact {
+  background-color: #343a40;
+}
+
+/* Hover effects for cards */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Button animations */
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar brand animation */
+.navbar-brand {
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+}
+
+/* Social media buttons */
+.social {
+  transition: all 0.3s ease;
+}
+
+.social:hover {
+  transform: translateY(-3px);
+  background-color: #dc3545 !important;
+  border-color: #dc3545 !important;
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}

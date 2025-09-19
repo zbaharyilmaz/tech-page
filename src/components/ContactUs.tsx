@@ -9,6 +9,7 @@ const ContactUs: React.FC = () => {
     phone: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -23,6 +24,10 @@ const ContactUs: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Prevent multiple submissions
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+
     // Form validation
     if (!formData.name || !formData.email || !formData.message) {
       toast.error("Lütfen tüm gerekli alanları doldurun!", {
@@ -33,6 +38,7 @@ const ContactUs: React.FC = () => {
         pauseOnHover: true,
         draggable: true,
       });
+      setIsSubmitting(false);
       return;
     }
 
@@ -47,6 +53,7 @@ const ContactUs: React.FC = () => {
         pauseOnHover: true,
         draggable: true,
       });
+      setIsSubmitting(false);
       return;
     }
 
@@ -70,20 +77,21 @@ const ContactUs: React.FC = () => {
           draggable: true,
         }
       );
-    }, 2000);
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
+      // Reset form and loading state
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+      setIsSubmitting(false);
+    }, 2000);
   };
 
   return (
     <div
-      className="container-fluid contact text-center py-5 text-white"
+      className="container-fluid contact text-center py-5 text-white contact-parallax"
       id="contact"
     >
       <h1 className="display-3">İletişim</h1>
@@ -136,8 +144,14 @@ const ContactUs: React.FC = () => {
               ></textarea>
             </div>
           </div>
-          <button type="submit" className="btn btn-danger btn-lg mt-3">
-            Mesaj Gönder
+          <button
+            type="submit"
+            className={`btn btn-danger btn-lg mt-3 ${
+              isSubmitting ? "btn-loading" : ""
+            }`}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "" : "Mesaj Gönder"}
           </button>
         </form>
       </div>

@@ -23,7 +23,7 @@ const OurTeam: React.FC = () => {
   ];
 
   return (
-    <div className="container-fluid text-center py-5 bg-light" id="team">
+    <div className="container-fluid text-center py-5 team-parallax" id="team">
       <h1 className="display-3">Ekibimiz</h1>
       <p>
         ZeTech'in deneyimli ve uzman eğitmen kadrosu, teknoloji dünyasında

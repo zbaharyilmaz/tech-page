@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutUs: React.FC = () => {
   return (
-    <div className="container-fluid text-center py-5" id="about">
+    <div className="container-fluid text-center py-5 about-parallax" id="about">
       <h1 className="display-3">Hakkımızda</h1>
       <p>
         ZeTech, teknoloji dünyasında başarılı olmak isteyen öğrencilere kapsamlı

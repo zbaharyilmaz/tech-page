@@ -48,7 +48,7 @@ const Portfolio: React.FC = () => {
 
   return (
     <div
-      className="container-fluid text-center py-5 bg-light fade-in-up"
+      className="container-fluid text-center py-5 fade-in-up portfolio-parallax"
       id="portfolio"
     >
       <h1 className="display-3">Portföy</h1>
@@ -61,7 +61,7 @@ const Portfolio: React.FC = () => {
         <div className="row mt-3 g-3">
           {portfolioItems.map((item) => (
             <div key={item.id} className="col-sm-12 col-md-4">
-              <div className="card h-100">
+              <div className="card h-100 parallax-element">
                 <img
                   src={item.image}
                   className="card-img-top"

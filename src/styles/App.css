@@ -1,12 +1,19 @@
 .icon {
   width: 150px;
   height: 150px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  color: white;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
 }
 
 .icon:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+  background: linear-gradient(135deg, #e55a2e 0%, #e8821a 100%);
 }
 
 .team {
@@ -23,14 +30,51 @@
   background-color: #343a40;
 }
 
-/* Hover effects for cards */
+/* Modern card styling */
 .card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(255, 107, 53, 0.3);
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(
+        135deg,
+        rgba(255, 107, 53, 0.1) 0%,
+        rgba(247, 147, 30, 0.1) 100%
+      )
+      border-box;
+}
+
+.card-img-top {
+  transition: transform 0.3s ease;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.card-text {
+  color: #666;
+  line-height: 1.6;
 }
 
 /* Smooth scrolling */
@@ -48,15 +92,23 @@ html {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Custom Orange Theme */
+/* Custom Orange Gradient Theme */
 .btn-danger {
-  background-color: #ff6b35 !important;
-  border-color: #ff6b35 !important;
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%) !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3) !important;
+  transition: all 0.3s ease !important;
 }
 
 .btn-danger:hover {
-  background-color: #e55a2e !important;
-  border-color: #e55a2e !important;
+  background: linear-gradient(135deg, #e55a2e 0%, #e8821a 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4) !important;
+}
+
+.btn-danger:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 10px rgba(255, 107, 53, 0.3) !important;
 }
 
 /* Orange gradient backgrounds */
@@ -68,21 +120,29 @@ html {
   color: #ff6b35 !important;
 }
 
-/* Icon hover effects with orange */
+/* Icon hover effects with orange gradient */
 .icon:hover {
-  background-color: #ff6b35 !important;
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%) !important;
   color: white !important;
+  transform: translateY(-5px) scale(1.05) !important;
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4) !important;
 }
 
-/* Team border orange on hover */
+/* Team border orange gradient on hover */
 .team:hover {
-  border-color: #ff6b35 !important;
+  border: 3px solid transparent !important;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(135deg, #ff6b35 0%, #f7931e 100%) border-box !important;
+  transform: scale(1.08) !important;
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3) !important;
 }
 
-/* Social media buttons orange */
+/* Social media buttons orange gradient */
 .social:hover {
-  background-color: #ff6b35 !important;
-  border-color: #ff6b35 !important;
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%) !important;
+  border: none !important;
+  transform: translateY(-3px) scale(1.1) !important;
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4) !important;
 }
 
 /* Navbar brand animation */
@@ -100,9 +160,66 @@ html {
 }
 
 .social:hover {
-  transform: translateY(-3px);
-  background-color: #dc3545 !important;
-  border-color: #dc3545 !important;
+  transform: translateY(-3px) scale(1.1);
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%) !important;
+  border: none !important;
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4) !important;
+}
+
+/* Modern form styling */
+.form-control {
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.form-control:focus {
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(135deg, #ff6b35 0%, #f7931e 100%) border-box;
+  box-shadow: 0 0 0 0.3rem rgba(255, 107, 53, 0.25);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.form-control::placeholder {
+  color: #adb5bd;
+  font-weight: 400;
+}
+
+.form-control-lg {
+  padding: 15px 20px;
+  font-size: 1.1rem;
+}
+
+/* Loading button state */
+.btn-loading {
+  position: relative;
+  color: transparent !important;
+}
+
+.btn-loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin-left: -8px;
+  margin-top: -8px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Fade in animation */
@@ -119,4 +236,241 @@ html {
 
 .fade-in-up {
   animation: fadeInUp 0.8s ease-out;
+}
+
+/* Parallax Effects */
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  transition: transform 0.1s ease-out;
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Parallax Sections */
+.banner-parallax {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 53, 0.8) 0%,
+    rgba(247, 147, 30, 0.8) 100%
+  );
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.services-parallax {
+  background: linear-gradient(
+    135deg,
+    rgba(248, 249, 250, 0.95) 0%,
+    rgba(255, 255, 255, 0.95) 100%
+  );
+  position: relative;
+}
+
+.portfolio-parallax {
+  background: linear-gradient(
+    135deg,
+    rgba(240, 242, 245, 0.95) 0%,
+    rgba(255, 255, 255, 0.95) 100%
+  );
+  position: relative;
+}
+
+.about-parallax {
+  background: linear-gradient(
+    135deg,
+    rgba(52, 58, 64, 0.95) 0%,
+    rgba(73, 80, 87, 0.95) 100%
+  );
+  color: white;
+  position: relative;
+}
+
+.team-parallax {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(248, 249, 250, 0.95) 100%
+  );
+  position: relative;
+}
+
+.contact-parallax {
+  background: linear-gradient(
+    135deg,
+    rgba(52, 58, 64, 0.95) 0%,
+    rgba(33, 37, 41, 0.95) 100%
+  );
+  color: white;
+  position: relative;
+}
+
+/* Floating Elements */
+.floating-icon {
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-icon:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.floating-icon:nth-child(3) {
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Parallax Scroll Effects */
+.parallax-element {
+  transition: transform 0.3s ease-out;
+}
+
+.parallax-element:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* Glassmorphism Effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Parallax Performance Optimization */
+@media (prefers-reduced-motion: reduce) {
+  .parallax-bg,
+  .floating-icon,
+  .parallax-element {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Disable parallax on mobile for performance */
+@media (max-width: 768px) {
+  .parallax-bg {
+    background-attachment: scroll !important;
+  }
+
+  .floating-icon {
+    animation: none !important;
+  }
+
+  .banner-parallax {
+    background-attachment: scroll !important;
+  }
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .display-3 {
+    font-size: 2.5rem;
+  }
+
+  .icon {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    margin-bottom: 1.5rem;
+  }
+
+  .card-img-top {
+    height: 200px;
+  }
+
+  .btn-lg {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  .form-control-lg {
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+
+  .py-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .mt-4 {
+    margin-top: 1.5rem !important;
+  }
+
+  .mt-3 {
+    margin-top: 1rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .display-3 {
+    font-size: 2rem;
+  }
+
+  .icon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-img-top {
+    height: 180px;
+  }
+
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .row {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+
+  .col-sm-12 {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 }
